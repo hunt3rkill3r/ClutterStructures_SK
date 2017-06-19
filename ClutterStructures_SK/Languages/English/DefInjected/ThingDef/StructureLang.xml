@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	<!-- Fence -->
+  	<NormalFence.label>Small Fence</NormalFence.label>
+	<NormalFence.description>A small garden fence.</NormalFence.description>
+	<!-- Concrete Fence -->
+  	<ConcreteFence.label>Concrete Fence</ConcreteFence.label>
+	<ConcreteFence.description>High fence reinforced with concrete.</ConcreteFence.description>
+	<!-- Load-Bearing Wall Light -->
+	<ClutterUWallLight.label>Load-Bearing Wall Light</ClutterUWallLight.label>
+	<ClutterUWallLight.description>Load-Bearing Walls. Strong enough to withstand any structural damage, its modular, you can install lights or windows.</ClutterUWallLight.description>
+	<!-- Load-Bearing Wall -->
+	<ClutterUtilityWall.label>Load-Bearing Wall</ClutterUtilityWall.label>
+	<ClutterUtilityWall.description>Load-Bearing Walls. Strong enough to withstand any structural damage, its modular, you can install lights or windows.</ClutterUtilityWall.description>
+	<!-- Reinforce Door -->
+  	<ReinforcedDoor.label>Reinforced Door</ReinforcedDoor.label>
+	<ReinforcedDoor.description>Divides rooms. Must be manually opened and closed, which slows people down. Reinforced.</ReinforcedDoor.description>
+	<!-- Reinforced AutoDoor -->
+	<RAutoDoor.label>Reinforced AutoDoor</RAutoDoor.label>
+	<RAutoDoor.description>Divides rooms. Automatic Door that is reinforced.</RAutoDoor.description>
+</LanguageData>

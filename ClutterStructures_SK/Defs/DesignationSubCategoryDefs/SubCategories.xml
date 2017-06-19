@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<SK.DesignationSubCategoryDef>
+		<defName>SubCategory_Containers</defName>
+		<label>Containers</label>
+		<description>Use to store various things inside..</description>
+		<defNames>
+			<li>Chest</li>
+			<li>NanoChest</li>
+			<li>Storage_MedicineCabinet</li>
+			<li>Basket</li>
+			<li>Barrel</li>
+			<li>ClutterShelf</li>
+		</defNames>
+		<designationCategory>Accessories</designationCategory>
+		<debug>false</debug>
+	</SK.DesignationSubCategoryDef>
+	<SK.DesignationSubCategoryDef>
+		<defName>SubCategory_Fences</defName>
+		<label>Fences</label>
+		<description>Various fences to keep your stuff safe.</description>
+		<defNames>
+			<li>NormalFence</li>
+			<li>ConcreteFence</li>
+		</defNames>
+		<designationCategory>Structure</designationCategory>
+		<debug>false</debug>
+	</SK.DesignationSubCategoryDef>
+	<SK.DesignationSubCategoryDef>
+		<defName>SubCategory_RWalls</defName>
+		<label>Reinforced Walls</label>
+		<description>Reinforced Walls.</description>
+		<defNames>
+			<li>ClutterUtilityWall</li>
+			<li>ClutterSilverWall</li>
+		</defNames>
+		<designationCategory>Structure</designationCategory>
+		<debug>false</debug>
+	</SK.DesignationSubCategoryDef>
+	<SK.DesignationSubCategoryDef>
+		<defName>SubCategory_RDoors</defName>
+		<label>Reinforced Doors</label>
+		<description>Reinforced Doors.</description>
+		<defNames>
+			<li>ReinforcedDoor</li>
+			<li>RAutoDoor</li>
+		</defNames>
+		<designationCategory>Structure</designationCategory>
+		<debug>false</debug>
+	</SK.DesignationSubCategoryDef>
+</Defs>

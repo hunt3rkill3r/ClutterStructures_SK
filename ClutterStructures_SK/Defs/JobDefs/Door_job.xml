@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<JobDefs>
+   <JobDef>
+    <defName>LockingDoorBasic</defName>
+    <driverClass>Clutter_Structure.Job_DoorLockable</driverClass>
+    <reportString>Locking/Unlocking doors.</reportString>
+	<casualInterruptible>false</casualInterruptible>
+  </JobDef>
+  
+   <JobDef>
+    <defName>SwitchWindowState</defName>
+    <driverClass>Clutter_Structure.Window_Job</driverClass>
+    <reportString>Opening/Closing window.</reportString>
+	<casualInterruptible>false</casualInterruptible>
+  </JobDef>
+
+</JobDefs>

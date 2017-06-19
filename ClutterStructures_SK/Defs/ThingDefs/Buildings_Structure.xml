@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Buildings>
+	<!-- Lockable Base -->
+	<ThingDef Name="ClutterStructureLockableDoors" Abstract="True">
+		<category>Building</category>
+		<thingClass>Building</thingClass>
+		<soundImpactDefault>BulletImpactMetal</soundImpactDefault>
+		<selectable>true</selectable>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<repairEffect>Repair</repairEffect>
+		<leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+		<filthLeaving>BuildingRubble</filthLeaving>
+	</ThingDef>
+	<!-- Lockable Door Base -->
+	<ThingDef ParentName="ClutterStructureLockableDoors" Name="ClutterStructureLockableDoorBase" Abstract="True">
+		<thingClass>LockableDoors.Building_Door2</thingClass>
+		<blueprintClass>Blueprint_Door</blueprintClass>
+		<category>Building</category>
+		<blueprintGraphicData>
+			<texPath>Things/Building/Door/Door_Blueprint</texPath>
+		</blueprintGraphicData>
+		<altitudeLayer>DoorMoveable</altitudeLayer>
+		<fillPercent>1</fillPercent>
+		<useHitPoints>true</useHitPoints>
+		<statBases>
+			<MaxHitPoints>250</MaxHitPoints>
+			<Flammability>0.0</Flammability>
+		</statBases>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<selectable>true</selectable>
+		<tickerType>Normal</tickerType>
+		<rotatable>false</rotatable>
+		<!--<regionBarrier>true</regionBarrier>-->
+		<soundImpactDefault>BulletImpactMetal</soundImpactDefault>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<holdsRoof>true</holdsRoof>
+		<staticSunShadowHeight>1.0</staticSunShadowHeight>
+		<blockLight>true</blockLight>
+		<drawerType>RealtimeOnly</drawerType>
+		<building>
+			<soundDoorOpenPowered>DoorOpenPowered</soundDoorOpenPowered>
+			<soundDoorClosePowered>DoorClosePowered</soundDoorClosePowered>
+			<soundDoorOpenManual>DoorOpenManual</soundDoorOpenManual>
+			<soundDoorCloseManual>DoorCloseManual</soundDoorCloseManual>
+			<ignoreNeedsPower>true</ignoreNeedsPower>
+			<canPlaceOverWall>true</canPlaceOverWall>
+		</building>
+		<comps>
+			<li Class="CompProperties_Forbiddable"/>
+		</comps>
+	</ThingDef>
+	<!-- Windows -->
+	<ThingDef ParentName="ClutterStructureLockableDoorBase">
+		<defName>UtilityWindows</defName>
+		<thingClass>Clutter_Structure.Window_Building</thingClass>
+		<label>Window</label>
+		<description>A window</description>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<altitudeLayer>Building</altitudeLayer>
+		<statBases>
+			<MaxHitPoints>150</MaxHitPoints>
+			<WorkToBuild>1100</WorkToBuild>
+		</statBases>
+		<graphicData>
+			<texPath>Clutter/Structure/WindowClose</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(1,1)</drawSize>
+			<damageData>
+				<rect>(0,0.12,1,0.76)</rect>
+				<enabled>false</enabled>
+			</damageData>
+		</graphicData>
+		<!--<uiIconPath>Clutter/Structure/LoadWallClose_front</uiIconPath>-->
+		<uiIconPath>Clutter/Structure/UtilityWallWindowClose_front</uiIconPath>
+		<building>
+			<ai_combatDangerous>true</ai_combatDangerous>
+		</building>
+		<stuffCategories>
+			<li>Metallic</li>
+		</stuffCategories>
+	    <costStuffCount>10</costStuffCount>
+		<costList>
+			<Glass>5</Glass>
+		</costList>
+		<pathCost>80</pathCost>
+		<passability>PassThroughOnly</passability>
+		<comps>
+			<li Class="CompProperties_Glower">
+				<overlightRadius>3.5</overlightRadius>
+				<compClass>CompGlower</compClass>
+				<glowRadius>4</glowRadius>
+				<glowColor>(50,50,50,0)</glowColor>
+			</li>
+			<li Class="Clutter_Structure.CompProps_MultiWallWindow">
+				<compClass>Clutter_Structure.Comp_MultiWallWindow</compClass>
+				<MultiWall>
+					<li>
+					<WallDefName>ClutterUtilityWall</WallDefName>
+					<!--<TexPath>Clutter/Structure/LoadWallOpen</TexPath>
+					<TexClosePath>Clutter/Structure/LoadWallClose</TexClosePath>-->
+					<TexPath>Clutter/Structure/UtilityWallWindowOpen</TexPath>
+					<TexClosePath>Clutter/Structure/UtilityWallWindowClose</TexClosePath>
+					</li>
+				</MultiWall>
+			</li>
+		</comps>
+		<researchPrerequisites>
+			<li>Autodoors</li>
+		</researchPrerequisites>
+		<placeWorkers>
+			<li>Clutter_Structure.PlaceWorker_NoAdjacentDoor</li>
+		</placeWorkers>
+	</ThingDef>
+
+</Buildings>

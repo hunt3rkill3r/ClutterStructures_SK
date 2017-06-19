@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Buildings>
+  
+ 	<ThingDef ParentName="ClutterStructureBuildingBase">
+		<defName>WindowThingy</defName>
+		<label>WindowThingy</label>
+		<thingClass>Building</thingClass>
+		<category>Building</category>
+		 <graphicData>
+		 <texPath>Blank</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+		<linkType>Basic</linkType>
+		    <linkFlags>
+      <li>Wall</li>
+    </linkFlags>
+		</graphicData>
+		<altitudeLayer>FloorEmplacement</altitudeLayer>
+		<selectable>false</selectable>
+			<pathCost>80</pathCost>
+		 <building>
+      <isInert>true</isInert>
+      <isEdifice>false</isEdifice>
+    </building>
+		<AltitudeLayer>Item</AltitudeLayer>
+		<useHitPoints>false</useHitPoints>
+	</ThingDef>
+
+</Buildings>
