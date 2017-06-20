@@ -264,6 +264,7 @@
         </blueprintGraphicData>
         <altitudeLayer>DoorMoveable</altitudeLayer>
         <fillPercent>1</fillPercent>
+	<affectsRegions>true</affectsRegions>
         <useHitPoints>true</useHitPoints>
         <statBases>
             <MaxHitPoints>250</MaxHitPoints>
