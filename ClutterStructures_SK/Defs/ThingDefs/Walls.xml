@@ -22,14 +22,14 @@
         <category>Building</category>
         <graphicData>
             <linkType>Basic</linkType>
-            <texPath>Clutter/Structure/Fence</texPath>
+            <texPath>Walls/Fence</texPath>
             <graphicClass>Graphic_Single</graphicClass>
             <shaderType>CutoutComplex</shaderType>
             <linkFlags>
                 <li>Custom5</li>
             </linkFlags>
         </graphicData>
-        <uiIconPath>Clutter/Structure/FenceTestico</uiIconPath>
+        <uiIconPath>Walls/FenceIcon</uiIconPath>
         <AltitudeLayer>Building</AltitudeLayer>
         <pathCost>75</pathCost>
         <passability>PassThroughOnly</passability>
@@ -41,9 +41,9 @@
         <fillPercent>0.3</fillPercent>
         <Description>To stop those pesky creatures eating from your storage.</Description>
         <placingDraggableDimensions>1</placingDraggableDimensions>
-        <costList>
-            <SteelBar>5</SteelBar>
-        </costList>
+		<stuffCategories>
+            <li>Stony</li>
+        </stuffCategories>
         <costStuffCount>5</costStuffCount>
         <holdsRoof>false</holdsRoof>
         <selectable>true</selectable>
@@ -60,7 +60,7 @@
         <category>Building</category>
         <graphicData>
             <linkType>Basic</linkType>
-            <texPath>Clutter/Structure/ConcreteFence</texPath>
+            <texPath>Walls/CFence</texPath>
             <graphicClass>Graphic_Single</graphicClass>
             <shaderType>CutoutComplex</shaderType>
             <linkFlags>
@@ -68,17 +68,19 @@
             </linkFlags>
         </graphicData>
         <Description>High fence</Description>
-        <uiIconPath>Clutter/Structure/ConcreteFenceIco</uiIconPath>
+        <uiIconPath>Walls/CFenceIcon</uiIconPath>
         <statBases>
             <MaxHitPoints>350</MaxHitPoints>
             <WorkToBuild>200</WorkToBuild>
             <Flammability>0.0</Flammability>
         </statBases>
-        <costList>
-            <SteelBar>5</SteelBar>
+		<stuffCategories>
+            <li>Metallic</li>
+        </stuffCategories>
+		<costStuffCount>5</costStuffCount>
+		<costList>
             <ConcreteResource>5</ConcreteResource>
         </costList>
-        <costStuffCount>10</costStuffCount>
         <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
         <altitudeLayer>Building</altitudeLayer>
         <passability>Impassable</passability>
@@ -108,13 +110,14 @@
         <category>Building</category>
         <Description>Load-Bearing Walls. Strong enough to withstand any structural damage, its modular, you can install lights or windows.</Description>
         <graphicData>
-			<texPath>Clutter/Structure/UWall</texPath>
+			<texPath>Walls/LoadWall</texPath>
             <graphicClass>Graphic_Single</graphicClass>
             <linkType>CornerFiller</linkType>
             <linkFlags>
                 <li>Wall</li>
 				<li>Rock</li>
             </linkFlags>
+			<shaderType>CutoutComplex</shaderType>
             <damageData>
                 <cornerTL>Damage/Corner</cornerTL>
                 <cornerTR>Damage/Corner</cornerTR>
@@ -129,7 +132,7 @@
         <blueprintGraphicData>
             <texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
         </blueprintGraphicData>
-		<uiIconPath>Clutter/Structure/UWallIco</uiIconPath>
+		<uiIconPath>Walls/LoadWallIcon</uiIconPath>
         <statBases>
             <MaxHitPoints>600</MaxHitPoints>
             <WorkToBuild>500</WorkToBuild>
@@ -164,8 +167,8 @@
         <researchPrerequisites>
             <li>SK_ConstructionII</li>
         </researchPrerequisites>
-		<SecondaryMaterialPath>Clutter/Structure/UWallA</SecondaryMaterialPath>
-        <ThirdMaterialPath>Clutter/Structure/UWallB</ThirdMaterialPath>
+		<SecondaryMaterialPath>Walls/LoadWallA</SecondaryMaterialPath>
+        <ThirdMaterialPath>Walls/LoadWallB</ThirdMaterialPath>
     </ThingDef>
 	<!-- Load-Bearing Wall Lights -->
     <ThingDef Class="Clutter_Structure.ClutterStructureThingDefs" ParentName="ClutterStructureBuildingBase">
@@ -175,7 +178,7 @@
         <category>Building</category>
         <Description>Load-Bearing Walls. Strong enough to withstand any structural damage, its modular, you can install lights or windows.</Description>
         <graphicData>
-			<texPath>Clutter/Structure/UWallYellow</texPath>
+			<texPath>Walls/LoadWallLights</texPath>
             <graphicClass>Graphic_Single</graphicClass>
             <linkType>CornerFiller</linkType>
             <linkFlags>
@@ -196,7 +199,7 @@
         <blueprintGraphicData>
             <texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
         </blueprintGraphicData>
-		<uiIconPath>Clutter/Structure/UWallIco</uiIconPath>
+		<uiIconPath>Walls/LoadWallIcon</uiIconPath>
         <statBases>
             <MaxHitPoints>600</MaxHitPoints>
             <WorkToBuild>500</WorkToBuild>
@@ -206,7 +209,7 @@
 		<stuffCategories>
             <li>Metallic</li>
         </stuffCategories>
-        <costStuffCount>1</costStuffCount>
+        <costStuffCount>2</costStuffCount>
         <CostList>
             <Wire>2</Wire>
             <Glass>5</Glass>
@@ -228,15 +231,6 @@
         </building>
         <tickerType>Normal</tickerType>
         <comps>
-            <!--<li Class="CompProperties_Glower">
-                <compClass>CompGlower</compClass>
-                <glowRadius>10</glowRadius>
-                <glowColor>(217,217,217,0)</glowColor>
-            </li>
-            <li Class="CompProperties_Power">
-                <compClass>CompPowerTrader</compClass>
-                <basePowerConsumption>65</basePowerConsumption>
-            </li>-->
 			<li Class="CompProperties_Glower">
 				<compClass>CompGlower</compClass>
 				<glowRadius>10</glowRadius>
@@ -252,167 +246,6 @@
 			</li>
             <li Class="CompProperties_Flickable" />
         </comps>
-		<PowerOffMaterialPath>Clutter/Structure/UWallYellowOff</PowerOffMaterialPath>
-    </ThingDef>
-	<!-- Door Base-->
-    <ThingDef ParentName="ClutterStructureBuildingBase" Name="ClutterDoorBase" Abstract="True">
-        <thingClass>Clutter_Structure.Building_DoorLockable</thingClass>
-        <blueprintClass>Blueprint_Door</blueprintClass>
-        <category>Building</category>
-        <blueprintGraphicData>
-            <texPath>Things/Building/Door/Door_Blueprint</texPath>
-        </blueprintGraphicData>
-        <altitudeLayer>DoorMoveable</altitudeLayer>
-        <fillPercent>1</fillPercent>
-	<affectsRegions>true</affectsRegions>
-        <useHitPoints>true</useHitPoints>
-        <statBases>
-            <MaxHitPoints>250</MaxHitPoints>
-            <Flammability>1.0</Flammability>
-        </statBases>
-        <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
-        <selectable>true</selectable>
-        <tickerType>Normal</tickerType>
-        <rotatable>false</rotatable>
-        <soundImpactDefault>BulletImpactMetal</soundImpactDefault>
-        <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
-        <designationCategory>Structure</designationCategory>
-        <holdsRoof>true</holdsRoof>
-        <staticSunShadowHeight>1.0</staticSunShadowHeight>
-        <blockLight>true</blockLight>
-        <drawerType>RealtimeOnly</drawerType>
-        <building>
-            <soundDoorOpenPowered>DoorOpenPowered</soundDoorOpenPowered>
-            <soundDoorClosePowered>DoorClosePowered</soundDoorClosePowered>
-            <soundDoorOpenManual>DoorOpenManual</soundDoorOpenManual>
-            <soundDoorCloseManual>DoorCloseManual</soundDoorCloseManual>
-            <ignoreNeedsPower>true</ignoreNeedsPower>
-            <canPlaceOverWall>true</canPlaceOverWall>
-        </building>
-        <comps>
-            <li>
-                <compClass>CompForbiddable</compClass>
-            </li>
-        </comps>
-    </ThingDef>
-	<!-- Reinforced Door -->
-    <ThingDef ParentName="ClutterDoorBase">
-        <defName>ReinforcedDoor</defName>
-        <label>Reinforced Door</label>
-        <description>Divides rooms. Must be manually opened and closed, which slows people down. Reinforced.</description>
-        <statBases>
-            <WorkToBuild>700</WorkToBuild>
-            <MaxHitPoints>1000</MaxHitPoints>
-            <Beauty>5</Beauty>
-        </statBases>
-        <stuffCategories>
-            <li>Metallic</li>
-        </stuffCategories>
-        <costStuffCount>70</costStuffCount>
-        <CostList>
-			<ReinforcedConcrete>10</ReinforcedConcrete>
-        </CostList>
-        <graphicData>
-            <texPath>Blank</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <shaderType>Transparent</shaderType>
-        </graphicData>
-        <uiIconPath>Door_Ico</uiIconPath>
-        <researchPrerequisites>
-            <li>Autodoors</li>
-        </researchPrerequisites>
-        <comps>
-            <li Class="Clutter_Structure.StructureCompProps">
-                <compClass>Clutter_Structure.CompDoorsDrawer</compClass>
-                <FrontDoorTexPath>DoorF</FrontDoorTexPath>
-                <SideLeftTexPath>DoorS</SideLeftTexPath>
-                <SideRightTexPath>DoorS</SideRightTexPath>
-                <FrameTexPath>Frame</FrameTexPath>
-                <DoorTextureSet>
-				    <li>
-                        <TargetWall>Wall</TargetWall>
-						<TexAdded>BaseWall</TexAdded>
-                    </li>
-                    <li>
-                        <TargetWall>ClutterUtilityWall</TargetWall>
-						<TexAdded>UtilityWall</TexAdded>
-                    </li>
-                    <li>
-                        <TargetWall>ClutterUWallLight</TargetWall>
-						<TexAdded>UtilityWall</TexAdded>
-                    </li>				    
-                </DoorTextureSet>
-            </li>
-        </comps>
-        <placeWorkers>
-            <li>Clutter_Structure.PlaceWorker_NoAdjacentDoor</li>
-        </placeWorkers>
-    </ThingDef>
-	<!-- Autodoor for LoadWall -->
-	<ThingDef ParentName="ClutterDoorBase">
-        <defName>RAutoDoor</defName>
-        <label>Reinforced AutoDoor</label>
-        <description>Divides rooms. Automatic Door that is reinforced.</description>
-        <statBases>
-            <WorkToBuild>700</WorkToBuild>
-            <MaxHitPoints>1000</MaxHitPoints>
-            <Beauty>5</Beauty>
-        </statBases>
-        <stuffCategories>
-            <li>Metallic</li>
-        </stuffCategories>
-        <costStuffCount>70</costStuffCount>
-        <CostList>
-			<Wire>5</Wire>
-			<ElectronicComponents>2</ElectronicComponents>
-			<ReinforcedGlass>10</ReinforcedGlass>
-			<ReinforcedConcrete>20</ReinforcedConcrete>
-        </CostList>
-        <graphicData>
-            <texPath>Blank</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <shaderType>Transparent</shaderType>
-        </graphicData>
-        <uiIconPath>ADoor_Ico</uiIconPath>
-        <researchPrerequisites>
-            <li>Autodoors</li>
-        </researchPrerequisites>
-        <comps>
-            <li Class="Clutter_Structure.StructureCompProps">
-                <compClass>Clutter_Structure.CompDoorsDrawer</compClass>
-                <FrontDoorTexPath>ADoorF</FrontDoorTexPath>
-                <SideLeftTexPath>ADoorS</SideLeftTexPath>
-                <SideRightTexPath>ADoorS</SideRightTexPath>
-                <FrameTexPath>Frame</FrameTexPath>
-                <DoorTextureSet>
-					<li>
-                        <TargetWall>Wall</TargetWall>
-						<TexAdded>BaseWall</TexAdded>
-                    </li>
-                    <li>
-                        <TargetWall>ClutterUtilityWall</TargetWall>
-						<TexAdded>UtilityWall</TexAdded>
-						
-                    </li>
-                    <li>
-                        <TargetWall>ClutterUWallLight</TargetWall>
-						<TexAdded>UtilityWall</TexAdded>
-                    </li>						    
-                </DoorTextureSet>
-            </li>
-			<li Class="CompProperties_Power">
-				<compClass>CompPowerTrader</compClass>
-				<basePowerConsumption>100</basePowerConsumption>
-			</li>
-			<li Class="CompProperties_Breakdownable"/>
-			<li Class="SK.CompProperties_LowIdleDraw">
-				<compClass>SK.CompPowerLowIdleDraw</compClass>
-				<idlePowerFactor>0.1</idlePowerFactor>
-				<operationalMode>WhenNear</operationalMode>
-			</li>
-        </comps>
-        <placeWorkers>
-            <li>Clutter_Structure.PlaceWorker_NoAdjacentDoor</li>
-        </placeWorkers>
+		<PowerOffMaterialPath>Walls/LoadWallLightsOff</PowerOffMaterialPath>
     </ThingDef>
 </Buildings>

@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Buildings>
+	<!-- Lockable Base -->
+	<ThingDef Name="ClutterStructureLockableDoors" Abstract="True">
+		<category>Building</category>
+		<thingClass>Building</thingClass>
+		<soundImpactDefault>BulletImpactMetal</soundImpactDefault>
+		<selectable>true</selectable>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<repairEffect>Repair</repairEffect>
+		<leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+		<filthLeaving>BuildingRubble</filthLeaving>
+	</ThingDef>
+	<!-- Lockable Door Base -->
+	<ThingDef ParentName="ClutterStructureLockableDoors" Name="ClutterStructureLockableDoorBase" Abstract="True">
+		<thingClass>LockableDoors.Building_Door2</thingClass>
+		<blueprintClass>Blueprint_Door</blueprintClass>
+		<category>Building</category>
+		<blueprintGraphicData>
+			<texPath>Things/Building/Door/Door_Blueprint</texPath>
+		</blueprintGraphicData>
+		<altitudeLayer>DoorMoveable</altitudeLayer>
+		<fillPercent>1</fillPercent>
+		<useHitPoints>true</useHitPoints>
+		<statBases>
+			<MaxHitPoints>250</MaxHitPoints>
+			<Flammability>0.0</Flammability>
+		</statBases>
+		<leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+		<selectable>true</selectable>
+		<tickerType>Normal</tickerType>
+		<rotatable>false</rotatable>
+		<affectsRegions>true</affectsRegions>
+		<soundImpactDefault>BulletImpactMetal</soundImpactDefault>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<holdsRoof>true</holdsRoof>
+		<staticSunShadowHeight>1.0</staticSunShadowHeight>
+		<blockLight>true</blockLight>
+		<drawerType>RealtimeOnly</drawerType>
+		<building>
+			<soundDoorOpenPowered>DoorOpenPowered</soundDoorOpenPowered>
+			<soundDoorClosePowered>DoorClosePowered</soundDoorClosePowered>
+			<soundDoorOpenManual>DoorOpenManual</soundDoorOpenManual>
+			<soundDoorCloseManual>DoorCloseManual</soundDoorCloseManual>
+			<ignoreNeedsPower>true</ignoreNeedsPower>
+			<canPlaceOverWall>true</canPlaceOverWall>
+		</building>
+		<comps>
+			<li Class="CompProperties_Forbiddable"/>
+		</comps>
+	</ThingDef>
+	<!-- Door Base-->
+    <ThingDef ParentName="ClutterStructureBuildingBase" Name="ClutterDoorBase" Abstract="True">
+        <thingClass>Clutter_Structure.Building_DoorLockable</thingClass>
+        <blueprintClass>Blueprint_Door</blueprintClass>
+        <category>Building</category>
+        <blueprintGraphicData>
+            <texPath>Things/Building/Door/Door_Blueprint</texPath>
+        </blueprintGraphicData>
+        <altitudeLayer>DoorMoveable</altitudeLayer>
+        <fillPercent>1</fillPercent>
+		<affectsRegions>true</affectsRegions>
+        <useHitPoints>true</useHitPoints>
+        <statBases>
+            <MaxHitPoints>250</MaxHitPoints>
+            <Flammability>1.0</Flammability>
+        </statBases>
+        <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+        <selectable>true</selectable>
+        <tickerType>Normal</tickerType>
+        <rotatable>false</rotatable>
+        <soundImpactDefault>BulletImpactMetal</soundImpactDefault>
+        <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+        <designationCategory>Structure</designationCategory>
+        <holdsRoof>true</holdsRoof>
+        <staticSunShadowHeight>1.0</staticSunShadowHeight>
+        <blockLight>true</blockLight>
+        <drawerType>RealtimeOnly</drawerType>
+        <building>
+            <soundDoorOpenPowered>DoorOpenPowered</soundDoorOpenPowered>
+            <soundDoorClosePowered>DoorClosePowered</soundDoorClosePowered>
+            <soundDoorOpenManual>DoorOpenManual</soundDoorOpenManual>
+            <soundDoorCloseManual>DoorCloseManual</soundDoorCloseManual>
+            <ignoreNeedsPower>true</ignoreNeedsPower>
+            <canPlaceOverWall>true</canPlaceOverWall>
+        </building>
+        <comps>
+            <li>
+                <compClass>CompForbiddable</compClass>
+            </li>
+        </comps>
+    </ThingDef>
+	<!-- Reinforced Door -->
+    <ThingDef ParentName="ClutterDoorBase">
+        <defName>ReinforcedDoor</defName>
+        <label>Reinforced Door</label>
+        <description>Divides rooms. Must be manually opened and closed, which slows people down. Reinforced.</description>
+        <statBases>
+            <WorkToBuild>700</WorkToBuild>
+            <MaxHitPoints>1000</MaxHitPoints>
+            <Beauty>5</Beauty>
+        </statBases>
+        <stuffCategories>
+            <li>Metallic</li>
+        </stuffCategories>
+        <costStuffCount>70</costStuffCount>
+        <CostList>
+			<ReinforcedConcrete>10</ReinforcedConcrete>
+        </CostList>
+        <graphicData>
+            <texPath>Blank</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>Transparent</shaderType>
+        </graphicData>
+        <uiIconPath>Door_Ico</uiIconPath>
+        <researchPrerequisites>
+            <li>Autodoors</li>
+        </researchPrerequisites>
+        <comps>
+            <li Class="Clutter_Structure.StructureCompProps">
+                <compClass>Clutter_Structure.CompDoorsDrawer</compClass>
+                <FrontDoorTexPath>DoorF</FrontDoorTexPath>
+                <SideLeftTexPath>DoorS</SideLeftTexPath>
+                <SideRightTexPath>DoorS</SideRightTexPath>
+                <FrameTexPath>Frame</FrameTexPath>
+                <DoorTextureSet>
+				    <li>
+                        <TargetWall>Wall</TargetWall>
+						<TexAdded>BaseWall</TexAdded>
+                    </li>
+                    <li>
+                        <TargetWall>ClutterUtilityWall</TargetWall>
+						<TexAdded>UtilityWall</TexAdded>
+                    </li>
+                    <li>
+                        <TargetWall>ClutterUWallLight</TargetWall>
+						<TexAdded>UtilityWall</TexAdded>
+                    </li>				    
+                </DoorTextureSet>
+            </li>
+        </comps>
+        <placeWorkers>
+            <li>Clutter_Structure.PlaceWorker_NoAdjacentDoor</li>
+        </placeWorkers>
+    </ThingDef>
+	<!-- Autodoor for LoadWall -->
+	<ThingDef ParentName="ClutterDoorBase">
+        <defName>RAutoDoor</defName>
+        <label>Reinforced AutoDoor</label>
+        <description>Divides rooms. Automatic Door that is reinforced.</description>
+        <statBases>
+            <WorkToBuild>700</WorkToBuild>
+            <MaxHitPoints>1000</MaxHitPoints>
+            <Beauty>5</Beauty>
+        </statBases>
+        <stuffCategories>
+            <li>Metallic</li>
+        </stuffCategories>
+        <costStuffCount>70</costStuffCount>
+        <CostList>
+			<Wire>5</Wire>
+			<ElectronicComponents>2</ElectronicComponents>
+			<ReinforcedGlass>10</ReinforcedGlass>
+			<ReinforcedConcrete>20</ReinforcedConcrete>
+        </CostList>
+        <graphicData>
+            <texPath>Blank</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>Transparent</shaderType>
+        </graphicData>
+        <uiIconPath>ADoor_Ico</uiIconPath>
+        <researchPrerequisites>
+            <li>Autodoors</li>
+        </researchPrerequisites>
+        <comps>
+            <li Class="Clutter_Structure.StructureCompProps">
+                <compClass>Clutter_Structure.CompDoorsDrawer</compClass>
+                <FrontDoorTexPath>ADoorF</FrontDoorTexPath>
+                <SideLeftTexPath>ADoorS</SideLeftTexPath>
+                <SideRightTexPath>ADoorS</SideRightTexPath>
+                <FrameTexPath>Frame</FrameTexPath>
+                <DoorTextureSet>
+					<li>
+                        <TargetWall>Wall</TargetWall>
+						<TexAdded>BaseWall</TexAdded>
+                    </li>
+                    <li>
+                        <TargetWall>ClutterUtilityWall</TargetWall>
+						<TexAdded>UtilityWall</TexAdded>
+						
+                    </li>
+                    <li>
+                        <TargetWall>ClutterUWallLight</TargetWall>
+						<TexAdded>UtilityWall</TexAdded>
+                    </li>						    
+                </DoorTextureSet>
+            </li>
+			<li Class="CompProperties_Power">
+				<compClass>CompPowerTrader</compClass>
+				<basePowerConsumption>100</basePowerConsumption>
+			</li>
+			<li Class="CompProperties_Breakdownable"/>
+			<li Class="SK.CompProperties_LowIdleDraw">
+				<compClass>SK.CompPowerLowIdleDraw</compClass>
+				<idlePowerFactor>0.1</idlePowerFactor>
+				<operationalMode>WhenNear</operationalMode>
+			</li>
+        </comps>
+        <placeWorkers>
+            <li>Clutter_Structure.PlaceWorker_NoAdjacentDoor</li>
+        </placeWorkers>
+    </ThingDef>
+</Buildings>

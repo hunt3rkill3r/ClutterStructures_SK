@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Buildings>
+	<!-- Abstract -->
+ 	<ThingDef ParentName="ClutterStructureBuildingBase">
+		<defName>WindowThingy</defName>
+		<label>WindowThingy</label>
+		<thingClass>Building</thingClass>
+		<category>Building</category>
+		 <graphicData>
+		 <texPath>Blank</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+		<linkType>Basic</linkType>
+		<linkFlags>
+			<li>Wall</li>
+		</linkFlags>
+		</graphicData>
+		<altitudeLayer>FloorEmplacement</altitudeLayer>
+		<selectable>false</selectable>
+			<pathCost>80</pathCost>
+		<building>
+			<isInert>true</isInert>
+			<isEdifice>false</isEdifice>
+		</building>
+		<AltitudeLayer>Item</AltitudeLayer>
+		<useHitPoints>false</useHitPoints>
+	</ThingDef>
+	<!-- Windows -->
+	<ThingDef ParentName="ClutterStructureLockableDoorBase">
+		<defName>UtilityWindows</defName>
+		<thingClass>Clutter_Structure.Window_Building</thingClass>
+		<label>Window</label>
+		<description>A window</description>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<altitudeLayer>Building</altitudeLayer>
+		<statBases>
+			<MaxHitPoints>150</MaxHitPoints>
+			<WorkToBuild>1100</WorkToBuild>
+		</statBases>
+		<graphicData>
+			<texPath>Clutter/Structure/WindowClose</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<drawSize>(1,1)</drawSize>
+			<damageData>
+				<rect>(0,0.12,1,0.76)</rect>
+				<enabled>false</enabled>
+			</damageData>
+		</graphicData>
+		<!--<uiIconPath>Clutter/Structure/LoadWallClose_front</uiIconPath>-->
+		<uiIconPath>Walls/LWwc_front</uiIconPath>
+		<building>
+			<ai_combatDangerous>true</ai_combatDangerous>
+		</building>
+		<stuffCategories>
+			<li>Metallic</li>
+		</stuffCategories>
+	    <costStuffCount>10</costStuffCount>
+		<costList>
+			<Glass>5</Glass>
+		</costList>
+		<pathCost>80</pathCost>
+		<passability>PassThroughOnly</passability>
+		<comps>
+			<li Class="CompProperties_Glower">
+				<overlightRadius>3.5</overlightRadius>
+				<compClass>CompGlower</compClass>
+				<glowRadius>4</glowRadius>
+				<glowColor>(50,50,50,0)</glowColor>
+			</li>
+			<li Class="Clutter_Structure.CompProps_MultiWallWindow">
+				<compClass>Clutter_Structure.Comp_MultiWallWindow</compClass>
+				<MultiWall>
+					<li>
+					<WallDefName>ClutterUtilityWall</WallDefName>
+					<TexPath>Walls/LWwo</TexPath>
+					<TexClosePath>Walls/LWwc</TexClosePath>
+					</li>
+				</MultiWall>
+			</li>
+		</comps>
+		<researchPrerequisites>
+			<li>Autodoors</li>
+		</researchPrerequisites>
+		<placeWorkers>
+			<li>Clutter_Structure.PlaceWorker_NoAdjacentDoor</li>
+		</placeWorkers>
+	</ThingDef>
+</Buildings>
