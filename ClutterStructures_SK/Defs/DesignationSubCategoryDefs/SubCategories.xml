@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-	<SK.DesignationSubCategoryDef>
+	<ArchitectSense.DesignationSubCategoryDef>
 		<defName>SubCategory_Containers</defName>
 		<label>Containers</label>
 		<description>Use to store various things inside..</description>
@@ -14,8 +14,8 @@
 		</defNames>
 		<designationCategory>Accessories</designationCategory>
 		<debug>false</debug>
-	</SK.DesignationSubCategoryDef>
-	<SK.DesignationSubCategoryDef>
+	</ArchitectSense.DesignationSubCategoryDef>
+	<ArchitectSense.DesignationSubCategoryDef>
 		<defName>SubCategory_Fences</defName>
 		<label>Fences</label>
 		<description>Various fences to keep your stuff safe.</description>
@@ -25,8 +25,8 @@
 		</defNames>
 		<designationCategory>Structure</designationCategory>
 		<debug>false</debug>
-	</SK.DesignationSubCategoryDef>
-	<SK.DesignationSubCategoryDef>
+	</ArchitectSense.DesignationSubCategoryDef>
+	<ArchitectSense.DesignationSubCategoryDef>
 		<defName>SubCategory_RWalls</defName>
 		<label>Reinforced Walls</label>
 		<description>Reinforced Walls.</description>
@@ -36,8 +36,8 @@
 		</defNames>
 		<designationCategory>Structure</designationCategory>
 		<debug>false</debug>
-	</SK.DesignationSubCategoryDef>
-	<SK.DesignationSubCategoryDef>
+	</ArchitectSense.DesignationSubCategoryDef>
+	<ArchitectSense.DesignationSubCategoryDef>
 		<defName>SubCategory_RDoors</defName>
 		<label>Reinforced Doors</label>
 		<description>Reinforced Doors.</description>
@@ -47,5 +47,5 @@
 		</defNames>
 		<designationCategory>Structure</designationCategory>
 		<debug>false</debug>
-	</SK.DesignationSubCategoryDef>
+	</ArchitectSense.DesignationSubCategoryDef>
 </Defs>
